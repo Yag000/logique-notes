@@ -61,9 +61,9 @@
     \end{itemize}
     
     Aussi, on dit que la relation $<$ sur un ensemble $E$ non vide est une relation d'ordre au sens strict sur $E$ si :
-    \begin{itemize}
-        \item $\forall x$, $y \in E$, $x < y$ si et seulement si $x \leqslant y$ et $x \ne y$
-    \end{itemize}
+    \begin{equation*}
+        \forall x,\,y \in E,\,x < y \iff x \leqslant y \quad \text{et} \quad x \ne y
+    \end{equation*}
     On peut l'axiomatiser de la manière suivante :
 
     $<$ est une relation d'ordre strict sur $E$ si elle est :
@@ -72,9 +72,9 @@
         \item Transitive : $\forall x$, $y$, $z \in E$, ($x < y$ et $y < z$) $\implies x < z$
     \end{itemize}
     On peut aussi maintenant définir $\leqslant$ de la manière suivante :
-    \begin{itemize}
-        \item $x \leq y$ si et seulement si  $x < y$ ou $x = y$
-    \end{itemize}
+    \begin{equation*}
+        x \leq y \iff  x < y \quad \text{ou} \quad  x = y
+    \end{equation*}
 
 \end{definition}
     
@@ -97,7 +97,6 @@
 	\begin{equation*}
         \forall x \text{, } y \in E (x < y \text{ ou } y < x \text{ ou } x = y \text{ (Trichotomie)})
 	\end{equation*}
-	\noindent
 
 \end{lemma}
 
@@ -116,14 +115,14 @@
 
 \begin{definition}
 
-    Un morphisme d'ordre entre 2 ensembles d'ordre ($A$, $\leqslant_A$), ($B$, $\leqslant_B$) est une application $\varphi : A \to B$
+    Un morphisme d'ordres entre 2 ensembles d'ordre ($A$, $\leqslant_A$), ($B$, $\leqslant_B$) est une application $\varphi : A \to B$
     tel que $\forall x$, $y\in A$, $x \leqslant_A y \iff \varphi(x) \leqslant_B \varphi(y)$
 
 \end{definition}
 
 \begin{definition}
 
-    Un isomorphisme d'ordre est un morphisme d'ordre bijectif.
+    Un isomorphisme d'ordres est un morphisme d'ordres bijectif.
 
     Remarque : Un isomorphisme est une bijection croissante dont la réciproque est croissante.
 
