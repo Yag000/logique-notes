@@ -93,7 +93,7 @@
 
 \begin{lemma}
 
-    Soit $<$ une relation d'ordre strict, soit $\leqslant$ l'ordre large associé. Donc $\leqslant$ est totale si et seulement si :
+    Soit $<$ une relation d'ordre strict, soit $\leqslant$ l'ordre large associé, $\leqslant$ est totale si et seulement si :
 	\begin{equation*}
         \forall x \text{, } y \in E (x < y \text{ ou } y < x \text{ ou } x = y \text{ (Trichotomie)})
 	\end{equation*}
@@ -105,7 +105,7 @@
     \begin{itemize}
         \item $x \sqsubseteq y$ si et seulement si $|x| \leqslant |y|$ pour $x$, $y \in \mathbb{C}$, n'est pas anti-symétrique
             car $-1 \sqsubseteq 1 \sqsubseteq -1$: ce n'est pas une relation d'ordre large car $1 \neq -1$.
-        \item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Ensemble ordonné d'ordre large pas total (${2} \nsubseteq {17}$ et ${17} \nsubseteq {2}$)
+        \item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Ensemble ordonné d'ordre large pas total ($\{2\} \nsubseteq \{17\}$ et $\{17\} \nsubseteq \{2\}$)
         \item ($\mathbb{N}$, $\leqslant$): Ensemble ordonné d'ordre large total, et qui admet en plus un minimum
         \item ($\mathbb{Q}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
         \item ($\mathbb{R}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
@@ -163,8 +163,8 @@
 
 \begin{example}
     \begin{itemize}
-        \item (${\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) n'est pas un bon ordre
-        \item (${-\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) est un bon ordre : il existe un isomorphisme (${-\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
+        \item ($\left\{\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) n'est pas un bon ordre
+        \item ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) est un bon ordre : il existe un isomorphisme ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
     \end{itemize}
 \end{example}
 
@@ -182,7 +182,7 @@
 
     On reformule par contraposée la proposition de récurrence bien fondée :
     \begin{equation*}
-        \exists x \in E\backslash J \implies \exists y \in E\backslash J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ avec } y = min(E\backslash J)
+        \exists x \in E\backslash J \implies \exists y \in E\backslash J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ ce qui veut dire que } y = min(E\backslash J)
     \end{equation*}
 	\noindent
     C'est la proposition des bons ordres pour $E\backslash J \subseteq E$.
