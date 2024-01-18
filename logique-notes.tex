@@ -35,6 +35,8 @@
 \theoremstyle{theorem}
 \newtheorem{theorem}{Théorème}
 
+\theoremstyle{theorem}
+\newtheorem{lemma}{Lemme}
 
 \begin{document}
 
@@ -42,5 +44,147 @@
 \author{Yago iglesias}
 \maketitle
 \tableofcontents
+
+
+\section{Ordres}
+
+\subsection{Les axiomes des ordres}
+
+
+\begin{definition}[Relation d'ordre]
+
+    On dit que la relation $\leqslant$ sur un ensemble $E$ non vide est une relation d'ordre au sens large sur $E$ si elle est :
+    \begin{itemize}
+        \item Réflexive : $\forall x \in E$, $x \leqslant x$
+        \item Anti-symétrique : $\forall x$, $y \in E$, ($x \leqslant y$ et $y \leqslant x$) $\implies x = y$)
+        \item Transitive : $\forall x$, $y$, $z \in E$, ($x \leqslant y$ et $y \leqslant z$) $\implies x \leqslant z$
+    \end{itemize}
+    
+    Aussi, on dit que la relation $<$ sur un ensemble $E$ non vide est une relation d'ordre au sens strict sur $E$ si :
+    \begin{itemize}
+        \item $\forall x$, $y \in E$, $x < y$ si et seulement si $x \leqslant y$ et $x \ne y$
+    \end{itemize}
+    On peut aussi l'axiomatiser de la manière suivante :
+
+    $<$ est une relation d'ordre strict sur $E$ si elle est :
+    \begin{itemize}
+        \item Irréflexive : $x \nless x$
+        \item Transitive : $\forall x$, $y$, $z \in E$, ($x < y$ et $y < z$) $\implies x < z$
+
+    \end{itemize}
+
+\end{definition}
+    
+
+\begin{definition}[Ensemble ordonné]
+
+    On dit qu'un ensemble ($E$, $\leqslant$) est ordonné si $E$ est non vide et qu'il est muni d'une relation d'ordre $\leqslant$.
+
+\end{definition}
+
+\begin{definition}[Relation totale]
+
+    On dit qu'une relation d'ordre $\leqslant$ est totale sur $E$ si pour $\forall x$, $y \in E$, x et y sont comparables.
+
+\end{definition}
+
+\begin{lemma}
+
+    Soit $<$ une relation d'ordre strict, soit $\leqslant$ l'ordre large associé. Donc $\leqslant$ est totale si et seulement si :
+	\begin{equation*}
+        \forall x \text{, } y \in E (x < y \text{ ou } y < x \text{ ou } x = y \text{ (Trichotomie)})
+	\end{equation*}
+	\noindent
+
+\end{lemma}
+
+\begin{example}
+    \begin{itemize}
+        \item $x \sqsubseteq y$ si et seulement si $|x| \leqslant |y|$ pour $x$, $y \in \mathbb{C}$, n'est pas anti-symétrique
+            car $-1 \sqsubseteq 1 \sqsubseteq -1$: ce n'est pas une relation d'ordre large.
+        \item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Ensemble ordonné d'ordre large pas total (${2} \nsubseteq {17}$ et ${17} \nsubseteq {2}$)
+        \item ($\mathbb{N}$, $\leqslant$): Ensemble ordonné d'ordre large total, et qui admet en plus un minimum
+        \item ($\mathbb{Q}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
+        \item ($\mathbb{R}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
+    \end{itemize} 
+\end{example}
+
+\subsection{Morphismes d'ordre}
+
+\begin{definition}
+
+    Un morphisme d'ordre entre 2 ensembles d'ordre ($A$, $\leqslant_A$), ($B$, $\leqslant_B$) est une application $\varphi : A \to B$
+    tel que $\forall x$, $y\in A$, $x \leqslant_A y \iff \varphi(x) \leqslant_B \varphi(y)$
+
+\end{definition}
+
+\begin{definition}
+
+    Une relation d'ordre $\leqslant$ sur $E$ définit un bon ordre sur $E$ si :
+    \begin{itemize}
+        \item $\leqslant$ est un ordre total
+        \item Tous sous-ensemble de $E$ non vide a un plus petit élément, c'est-à-dire pour tout $A \subseteq E$, $A \neq \emptyset$, il existe
+            $a \in A$ tel que $\forall b \in A$, $a \leqslant b$
+    \end{itemize}
+
+\end{definition}
+
+\begin{example}
+    \begin{itemize}
+        \item ($\mathbb{N}$, $\leqslant$): Bon ordre
+        \item ($\mathbb{Z}$, $\leqslant$): Mauvais ordre
+        \item ($[0, 1]$, $\leqslant$): Mauvais ordre ($]0, 1]$ n'admet pas de minimum)
+        \item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Mauvais ordre : Pas total
+        \item ($\emptyset$, $\emptyset$) : Bon ordre
+    \end{itemize} 
+\end{example}
+
+\begin{prop}
+    Soit ($A$, $\leqslant_A$) un bon ordre. Soit $B \subseteq A$ et soit $\leqslant_B$ une relation d'ordre large de B, alors ($B$, $\leqslant_B$) est bien ordonnée.
+\end{prop}
+
+\begin{proof}
+
+    Soit $C \subseteq B$ non vide, alors $C \subseteq A$ non vide. Donc il existe $c \in C$ l'élément le plus petit de $C$ par rapport à $\leqslant_A$. On
+    veut que $c$ soit l'élément le plut petit pour $\leqslant_B$. Soit $d \in C$, donc $c \leqslant_A d$ et puis $c \leqslant_B d$.
+
+\end{proof}
+
+\begin{example}
+    \begin{itemize}
+        \item (${\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) n'est pas un bon ordre
+        \item (${-\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) est un bon ordre : il existe un isomorphisme (${-\frac{1}{n} | n \in \mathbb{N}^*}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
+    \end{itemize}
+\end{example}
+
+\begin{prop}
+
+    Un ensemble non vide total ordonné ($E$, $\leqslant$) est bien ordonné si et seulement si il vérifie la propriété de récurrence bien fondée pour tout sous ensemble $J \subseteq E$ :
+    \begin{equation*}
+        \forall y \in E \text{, } \forall z \in E \text{, avec } z < y \text{, alors } (z \in J \implies y \in J) \implies J = E
+    \end{equation*}
+	\noindent
+
+\end{prop}
+
+\begin{proof}
+
+    On reformule par contraposée la proposition de récurrence bien fondée :
+    \begin{equation*}
+        \exists x \in E\backslash J \implies \exists y \in E\backslash J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ avec } y = min(E\backslash J)
+    \end{equation*}
+	\noindent
+    C'est la proposition des bons ordres pour $E\backslash J \subseteq E$.
+
+\end{proof}
+
+\begin{example}
+    Pour $x$, $y \in \mathbb{Z}$, on écrit $x | y$ si et seulement si $\exists z \in \mathbb{Z}$ tel que $y = x\cdot z$
+    \begin{itemize}
+        \item ($\mathbb{Z}$, $|$) n'est pas un bon ordre car $-1 | 1 | -1$ et $-1 \neq 1$
+        \item ($\mathbb{N}$, $|$) est une relation d'ordre pas totale car $2 \nmid 3 \nmid 2$
+        \item ($\mathbb{N}$, $\leqslant$) bon ordre car il n'existe pas de suite infinie décroissante dans $\mathbb{N}$
+    \end{itemize}
+\end{example}
 
 \end{document}
