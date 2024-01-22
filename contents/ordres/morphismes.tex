@@ -1,0 +1,85 @@
+\subsection{Morphismes d'ordres}
+
+\begin{definition}
+
+	Un morphisme d'ordres entre 2 ensembles d'ordre ($A$, $\leqslant_A$), ($B$, $\leqslant_B$) est une application $\varphi : A \to B$
+	tel que $\forall x$, $y\in A$, $x \leqslant_A y \iff \varphi(x) \leqslant_B \varphi(y)$
+
+\end{definition}
+
+\begin{definition}
+
+	Un isomorphisme d'ordres est un morphisme d'ordres bijectif.
+
+	Remarque : Un isomorphisme est une bijection croissante dont la réciproque est croissante.
+
+\end{definition}
+
+\begin{definition}
+
+	Une relation d'ordre $\leqslant$ sur $E$ définit un bon ordre sur $E$ si :
+	\begin{itemize}
+		\item $\leqslant$ est un ordre total
+		\item Tous sous-ensemble de $E$ non vide a un plus petit élément, c'est-à-dire pour tout $A \subseteq E$, $A \neq \emptyset$, il existe
+		      $a \in A$ tel que $\forall b \in A$, $a \leqslant b$
+	\end{itemize}
+
+\end{definition}
+
+\begin{example}
+	\begin{itemize}
+		\item ($\mathbb{N}$, $\leqslant$): Bon ordre
+		\item ($\mathbb{Z}$, $\leqslant$): Mauvais ordre car $]-\infty, 0]$ n'est pas borné à gauche
+		\item ($[0, 1]$, $\leqslant$): Mauvais ordre ($]0, 1]$ n'admet pas de minimum)
+		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Mauvais ordre : Pas total
+		\item ($\emptyset$, $\emptyset$) : Bon ordre
+	\end{itemize}
+\end{example}
+
+\begin{prop}
+	Soit ($A$, $\leqslant_A$) un bon ordre. Soit $B \subseteq A$ et soit $\leqslant_B$ une relation d'ordre large de B, alors ($B$, $\leqslant_B$) est bien ordonnée.
+\end{prop}
+
+\begin{proof}
+
+	Soit $C \subseteq B$ non vide, alors $C \subseteq A$ non vide. Donc il existe $c \in C$ l'élément le plus petit de $C$ par rapport à $\leqslant_A$. On
+	veut que $c$ soit l'élément le plut petit pour $\leqslant_B$. Soit $d \in C$, donc $c \leqslant_A d$ et puis $c \leqslant_B d$.
+
+\end{proof}
+
+\begin{example}
+	\begin{itemize}
+		\item ($\left\{\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) n'est pas un bon ordre
+		\item ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) est un bon ordre : il existe un isomorphisme ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
+	\end{itemize}
+\end{example}
+
+\begin{prop}
+
+	Un ensemble non vide total ordonné ($E$, $\leqslant$) est bien ordonné si et seulement si il vérifie la propriété de récurrence bien fondée pour tout sous ensemble $J \subseteq E$ :
+	\begin{equation*}
+		\forall y \in E \text{, } \forall z \in E \text{, avec } z < y \text{, alors } (z \in J \implies y \in J) \implies J = E
+	\end{equation*}
+	\noindent
+
+\end{prop}
+
+\begin{proof}
+
+	On reformule par contraposée la proposition de récurrence bien fondée :
+	\begin{equation*}
+		\exists x \in E\backslash J \implies \exists y \in E\backslash J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ ce qui veut dire que } y = min(E\backslash J)
+	\end{equation*}
+	\noindent
+	C'est la proposition des bons ordres pour $E\backslash J \subseteq E$.
+
+\end{proof}
+
+\begin{example}
+	Pour $x$, $y \in \mathbb{Z}$, on écrit $x | y$ si et seulement si $\exists z \in \mathbb{Z}$ tel que $y = x\cdot z$
+	\begin{itemize}
+		\item ($\mathbb{Z}$, $|$) n'est pas un bon ordre car $-1 | 1 | -1$ et $-1 \neq 1$
+		\item ($\mathbb{N}$, $|$) est une relation d'ordre pas totale car $2 \nmid 3 \nmid 2$
+		\item ($\mathbb{N}$, $\leqslant$) bon ordre car il n'existe pas de suite infinie décroissante dans $\mathbb{N}$
+	\end{itemize}
+\end{example}

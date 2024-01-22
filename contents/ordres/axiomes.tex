@@ -1,0 +1,62 @@
+\subsection{Les axiomes des ordres}
+
+
+\begin{definition}[Relation d'ordre]
+
+	On dit que la relation $\leqslant$ sur un ensemble $E$ non vide est une relation d'ordre au sens large sur $E$ si elle est :
+	\begin{itemize}
+		\item Réflexive : $\forall x \in E$, $x \leqslant x$
+		\item Anti-symétrique : $\forall x$, $y \in E$, ($x \leqslant y$ et $y \leqslant x$) $\implies x = y$)
+		\item Transitive : $\forall x$, $y$, $z \in E$, ($x \leqslant y$ et $y \leqslant z$) $\implies x \leqslant z$
+	\end{itemize}
+
+	Aussi, on dit que la relation $<$ sur un ensemble $E$ non vide est une relation d'ordre au sens strict sur $E$ si :
+	\begin{equation*}
+		\forall x,\,y \in E,\,x < y \iff x \leqslant y \quad \text{et} \quad x \ne y
+	\end{equation*}
+	On peut l'axiomatiser de la manière suivante :
+
+	$<$ est une relation d'ordre strict sur $E$ si elle est :
+	\begin{itemize}
+		\item Irréflexive : $x \nless x$
+		\item Transitive : $\forall x$, $y$, $z \in E$, ($x < y$ et $y < z$) $\implies x < z$
+	\end{itemize}
+	On peut aussi maintenant définir $\leqslant$ de la manière suivante :
+	\begin{equation*}
+		x \leq y \iff  x < y \quad \text{ou} \quad  x = y
+	\end{equation*}
+
+\end{definition}
+
+
+\begin{definition}[Ensemble ordonné]
+
+	On dit qu'un ensemble ($E$, $\leqslant$) est ordonné si $E$ est non vide et qu'il est muni d'une relation d'ordre $\leqslant$.
+
+\end{definition}
+
+\begin{definition}[Relation totale]
+
+	On dit qu'une relation d'ordre $\leqslant$ est totale sur $E$ si pour $\forall x$, $y \in E$, x et y sont comparables.
+
+\end{definition}
+
+\begin{lemma}
+
+	Soit $<$ une relation d'ordre strict, soit $\leqslant$ l'ordre large associé, $\leqslant$ est totale si et seulement si :
+	\begin{equation*}
+		\forall x \text{, } y \in E (x < y \text{ ou } y < x \text{ ou } x = y \text{ (Trichotomie)})
+	\end{equation*}
+
+\end{lemma}
+
+\begin{example}
+	\begin{itemize}
+		\item $x \sqsubseteq y$ si et seulement si $|x| \leqslant |y|$ pour $x$, $y \in \mathbb{C}$, n'est pas anti-symétrique
+		      car $-1 \sqsubseteq 1 \sqsubseteq -1$: ce n'est pas une relation d'ordre large car $1 \neq -1$.
+		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Ensemble ordonné d'ordre large pas total ($\{2\} \nsubseteq \{17\}$ et $\{17\} \nsubseteq \{2\}$)
+		\item ($\mathbb{N}$, $\leqslant$): Ensemble ordonné d'ordre large total, et qui admet en plus un minimum
+		\item ($\mathbb{Q}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
+		\item ($\mathbb{R}$, $\leqslant$): Ensemble ordonné d'ordre large total, et ensemble qui est dense
+	\end{itemize}
+\end{example}
