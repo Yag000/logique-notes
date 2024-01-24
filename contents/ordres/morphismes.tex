@@ -8,16 +8,16 @@
 \end{definition}
 
 \begin{definition}
-
 	Un isomorphisme d'ordres est un morphisme d'ordres bijectif.
-
-	Remarque : Un isomorphisme est une bijection croissante dont la réciproque est croissante.
-
 \end{definition}
+
+\begin{remarque}
+	Un isomorphisme est une bijection croissante dont la réciproque est croissante.
+\end{remarque}
 
 \begin{definition}
 
-	Une relation d'ordre $\leqslant$ sur $E$ définit un bon ordre sur $E$ si :
+	Une relation d'ordre $\leqslant$ sur $E$ définit un bon ordre sur $E$ si:
 	\begin{itemize}
 		\item $\leqslant$ est un ordre total
 		\item Tous sous-ensemble de $E$ non vide a un plus petit élément, c'est-à-dire pour tout $A \subseteq E$, $A \neq \emptyset$, il existe
@@ -50,7 +50,7 @@
 \begin{example}
 	\begin{itemize}
 		\item ($\left\{\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) n'est pas un bon ordre
-		\item ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) est un bon ordre : il existe un isomorphisme ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
+		\item ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) est un bon ordre: il existe un isomorphisme ($\left\{-\frac{1}{n} | n \in \mathbb{N}^*\right\}$, $\leqslant$) $\to$ ($\mathbb{N}$, $\leqslant$)
 	\end{itemize}
 \end{example}
 
@@ -66,7 +66,7 @@
 
 \begin{proof}
 
-	On reformule par contraposée la proposition de récurrence bien fondée :
+	On reformule par contraposée la proposition de récurrence bien fondée:
 	\begin{equation*}
 		\exists x \in E\backslash J \implies \exists y \in E\backslash J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ ce qui veut dire que } y = min(E\backslash J)
 	\end{equation*}
@@ -83,3 +83,5 @@
 		\item ($\mathbb{N}$, $\leqslant$) bon ordre car il n'existe pas de suite infinie décroissante dans $\mathbb{N}$
 	\end{itemize}
 \end{example}
+
+
