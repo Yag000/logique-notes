@@ -1,0 +1,15 @@
+\subsection{Définition inductive}
+
+On se place dans un univers avec deux symboles: $0$ et $S$.
+
+De cette manière, l'ensemlbe des entiers naturels est défini comme le plus petit ensemble $\mathbb{N}$ qui contient
+$0$ et qui est stable (clôt) par application du successeur $S$, i.e. si $x \in \mathbb{N}$ alors $S(x) \in \mathbb{N}$.
+
+Notons $Cl(A)$ la clôture de $A$ par application de $S$ et le fait que $0 \in A$:
+$$ Cl(A) = \{ 0 \in A \ \text{et} \ x \in \mathbb{N} \implies S(x) \in A \} $$
+
+\begin{remarque}
+    Si chacun des ensembles d'une famille $(A_i){i\in I}$ vérifie $Cl(A)$, alors leur intersection aussi.
+\end{remarque}
+
+Ainsi, $\mathbb{N} = \bigcap\limits_{Cl(A)} A$.

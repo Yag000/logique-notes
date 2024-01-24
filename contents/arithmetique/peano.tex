@@ -1,0 +1,35 @@
+\subsection{Axiomatisation et les axiomes de Peano}
+
+\begin{definition}[Axiomes pour les naturels]
+	\begin{itemize}
+		\item Succeseur non nul: $\forall x \in \mathbb{N}, S(x) \neq 0$
+		\item Injectivité du successeur: $\forall x,y \in \mathbb{N}, S(x) = S(y) \implies x = y$
+		\item Récurrence: Pour toute prorpiété $P$ << bien définie >> sur $\mathbb{N}$ alors
+		      $$ \left( P(0) \wedge \forall x \in \mathbb{N}, P(x) \implies P(S(x))\right) \implies \forall x \in \mathbb{N}, P(x) $$
+	\end{itemize}
+\end{definition}
+
+\begin{lemma}[Raissonement par récurrence]
+	Tout entier est soit $0$ soit un successeur:
+	$$ \forall x \in \mathbb{N}, x = 0 \vee \exists y \in \mathbb{N}, x = S(y) $$
+\end{lemma}
+
+\begin{proof}
+	Par récurrence, la propriété $P(x) = x = 0 \vee \exists y \in \mathbb{N}, x = S(y)$.
+	\begin{itemize}
+		\item $P(0)$ est vraie car $0 = 0$.
+		\item On suppose $P(x)$ vraie, donc $P(S(x))$.
+	\end{itemize}
+	Notons que dans cette preuve la propriété de récurrence n'est pas utilisée.
+\end{proof}
+
+
+\begin{definition}[Prédécesseur]
+	Pour tout élément non nul, on appelle prédécesseur de $x$ un élément $y$ tel que $S(y) = x$.
+\end{definition}
+
+\begin{exercice}
+	Montrer que les trois axiomes de Peano sont indépendants, c'est à dire, construire pour chacun des axiomes un
+	contre-modèle $\mathscr{N}$, avec un élément distingué $0$ et une fonction $S : \mathscr{N} \to \mathscr{N}$, où l’axiome dont on
+	veut montrer qu’il est indépendant n’est pas vérifié, mais les deux autres le sont.
+\end{exercice}

@@ -1,0 +1,75 @@
+\subsection{Définition par récurrence}
+
+On peut définir $\leq$ par:
+$$ x \leq y \iff \text{ il existe une suite finie } x_, S(x), S(S(x)), \cdots, S(S(\cdots S(x)) \cdots) = y $$
+mais ceci n'est pas une définition du premier ordre.\\
+
+L'objectif est de définir $+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$:
+\begin{itemize}
+	\item $x + 0 = x$
+	\item $x + S(y) = S(x + y)$
+\end{itemize}
+
+Mas pour cela nous avons besoin du théoreme suivant:
+
+\begin{theorem} [Dedekind 1888]
+	Si $E$ un ensemble non vide, $a \in E$ et $h : E \to E$ une fonction. Alors il existe une unique fonction $f : \mathbb{N} \to E$ telle que:
+	\begin{itemize}
+		\item $f(0) = a$
+		\item $f(S(x)) = h(f(x))$
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	L'unicité se demontre par récurrence. Soit $g$ une fonctions vérifiants les memes propriétés que $f$.
+	\begin{itemize}
+		\item $g(0) = a = f(0)$
+		\item Si on a $g(x) = f(x)$ alors $f(S(x)) = h(f(x)) = h(g(x)) = g(S(x))$
+	\end{itemize} \\
+
+
+	Demontrons maintenant l'existence. Nousa vons besoin d'une rélation entre les éléments de $E$ et les éléments de $\mathbb{N}$, pour pouvoir
+	définir une propriété de clôture. Pour cela on travaillera sur les sous ensembles de $\mathbb{N} \times E$.
+	Cette propriété de clôture est inspirée par la définiton de $f$, pour les sous ensembles $R$ de $\mathbb{N} \times E$.
+
+	$$ Cl(A) = (0,a) \in R \ \text{et} \ \forall n \in \mathbb{N}, \forall y \in E, (n,y) \in R \implies (S(n), h(y)) \in R $$
+
+	On peut vérifier que si $R$ est le grpahe d'une fonction $f$ alors on tretrouve les équations du théorème.
+
+	L'ensemble des $R \subset \mathbb{N} \times E$ vérifiant la propriété de clôture est non vide car il contient $\mathbb{N} \times E$. On peut donc poser:
+	$$ G = \bigcap\limits_{Cl(R)} R $$
+
+	Il s'ageit de montrer que $G$ est le graphe d'une fonction $f$ vérifiant les équations du théorème. Pour cela, il suffit de montrer que $G$ est une fonction.
+
+	\begin{itemize}
+		\item On a bien $Cl(G)$.
+		\item Tout élément $n \in \mathbb{N}$ possède un unique image par le relation de graphe $G$. Par récurrence:
+		      \begin{itemize}
+			      \item Pour $n = 0$, on a $(0,a) \in G$ car $Cl(G)$.
+			      \item Pour $n = S(x)$, on a $(n, h(y)) \in G$, pour $(n,y) \in G$.
+		      \end{itemize}
+		\item Tout éleément $n \in \mathbb{N}$ possède un unique image par la relation de graphe $G$. Par récurrence:
+		      \begin{itemize}
+			      \item Pour $n = 0$ s'il existe $b \neq a$ tel que $(0,b) \in G$. On a que $G' = G \setminus \{(0,b)\}$ vérifie $Cl(G')$, donc
+			            $G' \subset G$ ce qui est absurde.
+			      \item Si $n = S(m)$. Par hypothèse de récurrence $n$ a une seule image par $G$, qu'on note $X$.On sait aussi que $S(n)$ a pour image $h(x)$.
+			            Suposons que $S(n)$ ait pour image $y \neq h(x)$. On pose $G' = G \setminus \{(n,y)\}$ et on va aboutir à une contradiction en montrant que $G'$ vérifie $Cl(G')$.
+			            \begin{itemize}
+				            \item On note que $(0,a) \in G$ et comme $0 \neq S(n)$, on a $(0,a) \in G'$.
+				            \item Soit $d \in \mathbb{N}$ et $z \in E$ tel que $(d,z) \in G'$ alors $(d,z) \in G$ et donc $(S(d), h(z)) \in G$.
+				                  \begin{itemize}
+					                  \item Si $d \neq m$ et $S(d) \neq S(n)$ alors $(S(d), h(z)) \in G'$.
+					                  \item Si $d = m$, donc $z = x$ et alors $(S(d), h(z)) = (m, h(x)) \in G'$.
+					                  \item Si $d \neq n$ alors $(S(d), h(z)) \in G'$.
+				                  \end{itemize}
+				                  Donc $Cl(G')$ ce qui est absurde.
+			            \end{itemize}
+		      \end{itemize}
+	\end{itemize}
+\end{proof}
+
+
+\begin{exercice}
+	Démontrer que chacun des axiomes de Peano sont bien nécessaire pour le théorème de Dedekind.
+\end{exercice}
+

@@ -29,8 +29,8 @@
 		\item ($\mathbb{N}$, $\leqslant$): Bon ordre
 		\item ($\mathbb{Z}$, $\leqslant$): N'est pas un bon ordre car $]-\infty, 0]$ n'est pas borné à gauche
 		\item ($[0, 1]$, $\leqslant$): N'est pas un bon ordre ($]0, 1]$ n'admet pas de minimum)
-		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): N'est pas un bon ordre : Pas total
-		\item ($\emptyset$, $\emptyset$) : Bon ordre
+		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): N'est pas un bon ordre: Pas total
+		\item ($\emptyset$, $\emptyset$): Bon ordre
 	\end{itemize}
 \end{example}
 
@@ -54,7 +54,7 @@
 
 \begin{prop}
 
-	Un ensemble non vide total ordonné ($E$, $\leqslant$) est bien ordonné si et seulement si il vérifie la propriété de récurrence bien fondée pour tout sous ensemble $J \subseteq E$ :
+	Un ensemble non vide total ordonné ($E$, $\leqslant$) est bien ordonné si et seulement si il vérifie la propriété de récurrence bien fondée pour tout sous ensemble $J \subseteq E$:
 	\begin{equation*}
 		\forall y \in E \text{, } \forall z \in E \text{, avec } z < y \text{, alors } (z \in J \implies y \in J) \implies J = E
 	\end{equation*}
@@ -66,7 +66,7 @@
 
 	On reformule par contraposée la proposition de récurrence bien fondée:
 	\begin{equation*}
-		\exists x \in E\setminus J \implies \exists y \in E\setminus J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ ce qui veut dire que } y = min(E\setminus J)
+		\exists x \in E\setminus J \implies \exists y \in E\setminus J \text{ tel que } \forall z \in E \text{, } z < y \implies z \in J \text{ ce qui veut dire que } y = \min(E\setminus J)
 	\end{equation*}
 	\noindent
 	C'est la proposition des bons ordres pour $E\setminus J \subseteq E$.
