@@ -1,7 +1,7 @@
 \subsection{Définition par récurrence}
 
 On peut définir $\leq$ par:
-$$ x \leq y \iff \text{ il existe une suite finie } x_, S(x), S(S(x)), \cdots, S(S(\cdots S(x)) \cdots) = y $$
+$$ x \leq y \iff \text{ il existe une suite finie } x_, S(x), S(S(x)), \ldots, S(S(\ldots S(x)) \ldots) = y $$
 mais ceci n'est pas une définition du premier ordre.\\
 
 L'objectif est de définir $+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$:
@@ -25,9 +25,7 @@ Mas pour cela nous avons besoin du théoreme suivant:
 	\begin{itemize}
 		\item $g(0) = a = f(0)$
 		\item Si on a $g(x) = f(x)$ alors $f(S(x)) = h(f(x)) = h(g(x)) = g(S(x))$
-	\end{itemize} \\
-
-
+	\end{itemize}
 	Demontrons maintenant l'existence. Nousa vons besoin d'une rélation entre les éléments de $E$ et les éléments de $\mathbb{N}$, pour pouvoir
 	définir une propriété de clôture. Pour cela on travaillera sur les sous ensembles de $\mathbb{N} \times E$.
 	Cette propriété de clôture est inspirée par la définiton de $f$, pour les sous ensembles $R$ de $\mathbb{N} \times E$.
