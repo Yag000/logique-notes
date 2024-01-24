@@ -16,22 +16,20 @@
 \end{remarque}
 
 \begin{definition}
-
 	Une relation d'ordre $\leqslant$ sur $E$ définit un bon ordre sur $E$ si:
 	\begin{itemize}
 		\item $\leqslant$ est un ordre total
 		\item Tous sous-ensemble de $E$ non vide a un plus petit élément, c'est-à-dire pour tout $A \subseteq E$, $A \neq \emptyset$, il existe
 		      $a \in A$ tel que $\forall b \in A$, $a \leqslant b$
 	\end{itemize}
-
 \end{definition}
 
 \begin{example}
 	\begin{itemize}
 		\item ($\mathbb{N}$, $\leqslant$): Bon ordre
-		\item ($\mathbb{Z}$, $\leqslant$): Mauvais ordre car $]-\infty, 0]$ n'est pas borné à gauche
-		\item ($[0, 1]$, $\leqslant$): Mauvais ordre ($]0, 1]$ n'admet pas de minimum)
-		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): Mauvais ordre : Pas total
+		\item ($\mathbb{Z}$, $\leqslant$): N'est pas un bon ordre car $]-\infty, 0]$ n'est pas borné à gauche
+		\item ($[0, 1]$, $\leqslant$): N'est pas un bon ordre ($]0, 1]$ n'admet pas de minimum)
+		\item ($\mathscr{P}(\mathbb{N})$, $\subseteq$): N'est pas un bon ordre : Pas total
 		\item ($\emptyset$, $\emptyset$) : Bon ordre
 	\end{itemize}
 \end{example}
@@ -83,5 +81,3 @@
 		\item ($\mathbb{N}$, $\leqslant$) bon ordre car il n'existe pas de suite infinie décroissante dans $\mathbb{N}$
 	\end{itemize}
 \end{example}
-
-
