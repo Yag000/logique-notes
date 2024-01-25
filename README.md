@@ -1,4 +1,4 @@
-# Integration and Fourier series notes
+# Logic notes
 
 Notes from my Logic course at the University Paris Cité.
 
