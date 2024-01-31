@@ -74,7 +74,7 @@ Mas pour cela nous avons besoin du théoreme suivant:
 
 
 \begin{coro}[Définition par récurence avec paramèttre]
-	Soit $A$ un ensemble et $E$ un ensemble non vide. Soit $g: A \to E$ et $h: A \times E \to E$ deux fonctions. Alors il existe une unique fonction $f: \mathbb{N} \times A \to E$ telle que:
+	Soit $A$ un ensemble et $E$ un ensemble non vide. Soit $g: A \to E$ et $h: E \times A \to E$ deux fonctions. Alors il existe une unique fonction $f: \mathbb{N} \times A \to E$ telle que:
 	\begin{itemize}
 		\item $f(0,y) = g(y) \ \forall y \in A$
 		\item $f(S(x), y) = h(f(x,y), y) \ \forall x \in \mathbb{N}, \forall y \in A$
@@ -148,7 +148,7 @@ Mas pour cela nous avons besoin du théoreme suivant:
 	On veut définir une fonction $mult: \N \times \N \to \N$ telle que:
 	\begin{eqnarray*}
 		x \cdot 0 & = & 0 \\
-		x \cdot S(y) & = & x \cdot y + y
+		x \cdot S(y) & = & x \cdot y + x
 	\end{eqnarray*}
 
 	Comme pour la multiplication on commence par poser:
