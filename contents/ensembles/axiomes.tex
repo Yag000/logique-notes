@@ -1,0 +1,26 @@
+\subsection{Axiomes de la théorie des ensembles}
+
+\begin{axiom} [Extensionnalité]
+	$$\forall A \ \forall B ( A = B \iff \forall x (x \in A \iff x \in B))$$
+\end{axiom}
+
+\begin{axiom} [Compréhension]
+	Pour toute propriété $P(x)$, exprimée dans le langage de la théorie des ensembles du premier ordre,
+	$$ \forall A \ \exists B \subset A \text{ des l'éĺéments de } A \text{ qui vérifient } P(x)$$
+	Qui est équivalent à:
+	$$ \forall A \  \exists B \  \forall x (x \in B \iff x \in A \land P(x))$$
+	Cet ensemble est unique par extensionnalité et il est noté $\{x \in A \mid P(x)\}$.
+\end{axiom}
+
+\begin{axiom}[Des paires]
+	$$ \forall A \  \forall B \  \exists C \  \forall \ x \  (x \in C \iff x = A \lor x = B)$$
+	Il est noté $\{A,B\}$.
+\end{axiom}
+
+
+\begin{axiom}[Réunion]
+	$$ \forall A \ \exists B \ (\forall x \in B \iff (\exists Y \in A  \ x \in  Y))$$
+    Noté $\bigcup A$.
+\end{axiom}
+
+

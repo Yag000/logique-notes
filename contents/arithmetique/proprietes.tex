@@ -1,0 +1,47 @@
+\subsection{Quelques propriétés de $\N$}
+
+
+\begin{prop}
+	$\forall x, y, z \in \N, x + (y + z) = (x + y) + z$
+\end{prop}
+
+\begin{proof}
+	\begin{itemize}
+		\item $z = 0$ : $x + (y + 0) = x + y = (x + y) + 0$
+		\item $z = S(z')$ :
+		      \begin{eqnarray*}
+			      x + (y + S(z')) & = & x + S(y + z') \\
+			      & = & S(x + (y + z')) \\
+			      & = & S((x + y) + z') \\
+			      & = & (x + y) + S(z')
+		      \end{eqnarray*}
+	\end{itemize}
+\end{proof}
+
+\begin{prop} Propriétés de l'addition et de la multiplication
+	\begin{itemize}
+		\item $ 0 + x = 0, \ \forall x \in \N$
+		\item $S(x) + y = S(x + y), \ \forall x, y \in \N$
+		\item $x + y = y + x, \ \forall x, y \in \N$
+		\item $x \cdot (y + z) = x \cdot y + x \cdot z, \ \forall x, y, z \in \N$
+		\item $x \cdot ( y \cdot z) = (x \cdot y) \cdot z, \ \forall x, y, z \in \N$
+		\item $ 0 \cdot x = 0, \ \forall x \in \N$
+		\item $S(x) \cdot y = x \cdot y + y, \ \forall x, y \in \N$
+		\item $x \cdot y = y \cdot x, \ \forall x, y \in \N$
+		\item $1 \cdot x =  x \cdot 1 =  x, \ \forall x \in \N$
+	\end{itemize}
+\end{prop}
+
+
+\begin{example}
+	Montrer que, à partir des axiomes ou les pripriétés déjà demontrés, on a:
+	\begin{eqnarray*}
+		z + x  = z' + x &\implies& z = z' \\
+		x + z  = y + z' &\implies& z = z'
+	\end{eqnarray*}
+\end{example}
+
+\begin{proof}
+	Si $z + S(n) = z' + S(n)$ alors $S(z + n) = S(z' + n)$.
+	Par injectivité de $S$ on a $z + n = z' + n$ et donc $z = z'$.
+\end{proof}

@@ -71,3 +71,107 @@ Mas pour cela nous avons besoin du théoreme suivant:
 	Démontrer que chacun des axiomes de Peano sont bien nécessaire pour le théorème de Dedekind.
 \end{exercice}
 
+
+
+\begin{coro}[Définition par récurence avec paramèttre]
+	Soit $A$ un ensemble et $E$ un ensemble non vide. Soit $g: A \to E$ et $h: A \times E \to E$ deux fonctions. Alors il existe une unique fonction $f: \mathbb{N} \times A \to E$ telle que:
+	\begin{itemize}
+		\item $f(0,y) = g(y) \ \forall y \in A$
+		\item $f(S(x), y) = h(f(x,y), y) \ \forall x \in \mathbb{N}, \forall y \in A$
+	\end{itemize}
+\end{coro}
+
+
+\begin{proof}
+	On note $E^A$ l'ensemble des fonctions de $A$ dans $E$
+	On veut définir par récurrence la fonction
+	\begin{eqnarray} \label{eq:recurrence}
+		\tilde{f} : A & \to     & E^A   \\
+		x             & \mapsto & f_x : A \to E    \nonumber \\
+		&         & y \mapsto f(x,y) \nonumber
+	\end{eqnarray}
+	\begin{itemize}
+		\item Unicité: Soit $f,f'$ deux fonctions vérifiant les propriétés du corollaire. On définit $\tilde{f}$ et $\tilde{f'}$ en utilisant \ref{eq:recurrence}.
+		      Donc $f = f' \iff \tilde{f} = \tilde{f'}$.
+		      Maintenat on étudie juste l'unicité de $\tilde{f}$.
+		      \begin{itemize}
+			      \item  $ \tilde{f}(0) = g = \tilde{f'}(0)$
+			      \item $ \tilde{f}(S(x)) = \tilde{h}(\tilde{f}(x))$ et $ \tilde{f'}(S(x)) = \tilde{h}(\tilde{f'}(x))$.
+		      \end{itemize}
+		      Comme elles vérifient les équations du théorème de Dedekind, on a $\tilde{f} = \tilde{f'}$ et donc $f = f'$.
+		\item Existence: Soit \begin{eqnarray*}
+			      \tilde{h}: E^A & \to & E^A \\
+			      k & \mapsto & h(k(y),y)
+		      \end{eqnarray*}
+		      Soit $\tilde{f} : \N \to E^A$ définie par le théoreme de rñecurrence:
+		      \begin{itemize}
+			      \item $\tilde{f}(0) = g$
+			      \item $\tilde{f}(S(x)) = \tilde{h}(\tilde{f}(x))$
+		      \end{itemize}
+		      Maintenant \begin{eqnarray*}
+			      f : \N \times A & \to & E \\
+			      (x,y) & \mapsto & \tilde{f}(x)(y)
+		      \end{eqnarray*}
+		      et \begin{itemize}
+			      \item $f(0,y) = \tilde{f}(0)(y) = g(y)$
+			      \item \begin{eqnarray*}
+				            f(s(x),y) & = & \tilde{f}(S(x))(y) \\
+				            & = & \tilde{h}(\tilde{f}(x))(y) \\
+			            \end{eqnarray*}
+		      \end{itemize}
+	\end{itemize}
+\end{proof}
+
+
+\begin{example}
+	On veut définir l'addition par récurrence comme suit:
+	\begin{itemize}
+		\item $x + 0 = x$
+		\item $x + S(y) = S(x + y)$
+	\end{itemize}
+	Pour le faire on pose:
+	\begin{itemize}
+		\item $A = \mathbb{N}$
+		\item $g = id_{\N}$
+		\item $h(x,y) = S(x)$
+	\end{itemize}
+	Par le corollaire précédent, il existe une unique fonction $f: \N \times \N \to \N$ telle que:
+	\begin{eqnarray*}
+		f : \N \times \N & \to & \N \\
+		f(0,y) & = & g(y) = y \\
+		f(S(x),y) & = & h(f(x,y),y) = S(f(x,y))
+	\end{eqnarray*}
+	Ainsi, l'addition est bien définie par récurrence.
+\end{example}
+
+\begin{example}
+	On veut définir une fonction $mult: \N \times \N \to \N$ telle que:
+	\begin{eqnarray*}
+		x \cdot 0 & = & 0 \\
+		x \cdot S(y) & = & x \cdot y + y
+	\end{eqnarray*}
+
+	Comme pour la multiplication on commence par poser:
+	\begin{itemize}
+		\item $A = \N$
+		\item $g = 0$
+		\item $h(x,y) = x + y$
+	\end{itemize}
+
+	Et on a par le corollaire précédent:
+	\begin{eqnarray*}
+		f : \N \times \N & \to & \N \\
+		f(0,y) & = & g(y) = 0 \\
+		f(S(x),y) & = & h(f(x,y),y) = f(x,y) + y
+	\end{eqnarray*}
+	Et ainsi la multiplication est bien définie par récurrence.
+\end{example}
+
+
+\begin{example}[Puissances itérées de Knuth] \href{https://en.wikipedia.org/wiki/Knuth\%27s_up-arrow_notation}{Wikipedia}
+	\begin{itemize}
+		\item $x \uparrow 0 = 1$
+		\item $x \uparrow S(y) = x^{x \uparrow y}$
+		\item $x \uparrow \uparrow y = \underbrace{x \uparrow x \uparrow \ldots \uparrow x}_{y \text{ fois}}$
+	\end{itemize}
+\end{example}
