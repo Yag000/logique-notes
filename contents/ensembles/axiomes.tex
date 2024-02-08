@@ -17,10 +17,61 @@
 	Il est noté $\{A,B\}$.
 \end{axiom}
 
-
 \begin{axiom}[Réunion]
-	$$ \forall A \ \exists B \ (\forall x \in B \iff (\exists Y \in A  \ x \in  Y))$$
-    Noté $\bigcup A$.
+	$$ \forall A \ \exists B \ (\forall x \in B \iff (\exists C \in A  \land x \in  C))$$
+	Noté $\bigcup A$.
 \end{axiom}
+
+
+\begin{axiom}[Ensemble des parties]
+	$$ \forall A \exists V \forall C ( c \in B \iff \forall x ( x \in C \implies x    in A ) $$
+	On note $B = \mathcal{P}(A)$.
+\end{axiom}
+
+
+\begin{axiom}[Infini]
+	$$ \exists A (\emptyset \in A \land \forall x (x in A \implies x \cup \{x\} \in A))$$
+	On peut noter cette opération $x^+$.
+\end{axiom}
+
+
+\begin{remarque}
+	Soit $A$ un ensemble non vide, on définit alors :
+	$$ \bigcap A = \left\{x \in \bigcup A \mid \forall B \ (B \in A \iff \ x \in B)\right\}$$
+\end{remarque}
+
+
+Soit $A$ un ensemble donné par l'axiome de l'infini, on considère l'ensemble:
+$$ \left\{ B \in \mathcal{P}(A) \mid \emptyset \in B \land \forall x (x \in B \implies x^+ \in B) \right\} = \N $$
+Notez bien que l'axiome de l'infini est valide pour:
+$$ \N \cup \left\{ \N, \N^+, \N^{++}, \ldots \right\} $$
+
+
+\begin{prop}[Couples de Wiener-Kuratowski]
+	À deux ensembles $a, B$ on peut associer un ensemble, noté $(A,B)$ défini par
+	$$ (A,B) = \{ \{A\}, \{A,B\} \}$$
+	On a pour tout $A, B, C, D$:
+	$$ \left((A, B) = (C,D) \iff (A = C \land B = D)\right)$$
+\end{prop}
+
+\begin{proof}
+	Si $A = C \land B = D$, alors $(A,B) = (C,D)$.\\
+	Opn suppose (A,B) = (C,D), i.e. $\{\{A\}, \{A,B\}\} = \{\{C\}, \{C,D\}\}$.\\
+
+	\begin{itemize}
+		\item Si $A \neq B$ on a $\{A\} \neq \{A,B\}$, donc $\{\{A\}, \{A,B\}\}$ n'est pas in singleton.
+		      De même pour $\{\{C\}, \{C,D\}\}$.\\
+		      Il y a deux (ou moins) éléments dans $\{\{C\}, \{C,D\}\}$, donc $\{C\}$ et  $\{C,D\}$ sont différents.\\
+		      Et donc $C \neq D$. \\
+		      Il y a un seul singleton dans $\{\{A\}, \{A,B\}\}$, donc $\{A\} = \{C\}$, donc $A = C$.\\
+		      On a aussi $$\{A,B\} = \{C,D\}$$, donc $\{A, B\}\setminus \{A\} = \{C,D\}\setminus \{C\}$, donc $B = D$.
+		\item Le reste est laissé en exercice pour le lecteur.
+	\end{itemize}
+\end{proof}
+
+
+On note
+$$ \Pi A = \left\{ f: A \to \bigcup A \mid \forall x \in A \ (f(x) \in x) \right\}$$
+
 
 
