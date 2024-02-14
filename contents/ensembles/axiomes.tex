@@ -74,4 +74,62 @@ On note
 $$ \Pi A = \left\{ f: A \to \bigcup A \mid \forall x \in A \ (f(x) \in x) \right\}$$
 
 
+\begin{prop}
+	$$ \left\{ B \in \mathcal{P}(A) \mid \emptyset \in B \land \forall x (x \in B \implies x^+ \in B) \right\} = \N $$
+\end{prop}
+
+\begin{proof}
+	Soit $A_1, A_2$ tel que $\emptyset \in A_i$ et
+	$ \forall x (x \in A_i \implies x^+ \in A_i) (*)$
+	On veut montrer que
+	$$ \bigcap_{A\subseteq A_1, \, A (*)} = \bigcap_{A\subseteq A_2, \, A(*)} $$
+	Sans perte de généralité on suppose $A_1 \subseteq A_2$ (On peut le supposer car
+	$A_1 \cap A_2$ satisfait (*))
+	Maintenant on a
+	$$ \bigcap_{A\subseteq A_1, \, A (*)} \supseteq \bigcap_{A\subseteq A_2, \, A(*)} $$
+	Mais $A_1$ est un sous-ensemble de $A_2$ qui satisfait (*), donc
+	$$A_1 \supset \bigcap_{A\subseteq A_2, \, A(*)} $$
+	et alors
+	$$ \bigcap_{A\subseteq A_1, \, A (*)} = \bigcap_{A\subseteq A_2, \, A(*)} $$
+\end{proof}
+
+
+\begin{definition}
+	$\forall x,y $ on note
+	$$ (x,y) = \{\{ x\}, \{x,y\} \} $$
+	et
+	$$ (x,x) = \{\{ x\}, \{x,x\} \} = \{\{ x\}, \{x\} \} = \{\{ x\}\}$$
+	et
+	$$ (x,y) = (u,v) \iff x = u \wedge y = v $$
+\end{definition}
+
+\begin{definition}
+	$A \times B = \left\{ (x,y) \in \Pa \Pa (A\times B) \mid x \in A \wedge y \in B \right\}$
+\end{definition}
+
+
+\begin{definition}
+	Un graphe fonctionnel est $G$ tel que $ \exists A \exists B $ qui vérifient :
+	$$\phi (G,A,B) = \left( G \subseteq A \times B \wedge \forall x \left( x \in A \to \exists ! y, \  (x,y) \in G\right)\right) $$
+\end{definition}
+
+\begin{definition}
+	Soit $A,B$:
+	$$ B^A = \left\{G \in \Pa (A\times B)\mid \phi (G,A,B)\right\} $$
+\end{definition}
+
+
+\begin{axiom}[Choix]
+	Soit $A$ un ensemble, il existe une fonction $f : \Pa(A)\setminus \{\emptyset\} \to A$ telle que
+	$$ \forall B \in \Pa(A)\setminus\{\emptyset\}, \ f(B) \in B$$
+	Ce qui est équivalent a:
+	$$ \forall A \exists f \in A^{\Pa(A)\setminus\{\emptyset\}} \forall B \in \Pa(A)\setminus\{\emptyset\}, \ f(B) \in B$$
+
+\end{axiom}
+
+
+
+
+
+
 

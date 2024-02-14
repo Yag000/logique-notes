@@ -1,0 +1,45 @@
+\subsection{Axiome du choix}
+
+On n'arrive pas à démontrer que tout ensemble infini contient un sous-ensemble dénombrable si on ne suppose pas AC.
+
+
+\begin{definition}[Famille]
+	$$ \left\{ (i, A_i) \mid i \in I \right\} $$
+
+\end{definition}
+
+\begin{axiom}[Forlumation équiavalente de l'axiome du choix I]
+	Pour toute famille non vide $(A_i)_{i \in I}$ il existe une fonction
+	$f : I \to \bigcup{i \in I} A_i$ qui vérifie $F(i) \in A_i, \ \forall i$
+\end{axiom}
+
+\begin{axiom}[Forlumation équiavalente de l'axiome du choix II]
+	Si $(A_i)_{i \in I}$ est une famille non vide d'ensembles non vides,
+	$$ \emptyset \neq \prod_{i \in I} A_i = \left\{ f: I \to \bigcup\limits_{i \in I} A_i  \mid f(i) \in A_i \right\} $$
+\end{axiom}
+
+\begin{theorem}
+	Tout ensemble infini possède un sous ensemble dénombrable.
+\end{theorem}
+
+\begin{proof}
+	Soit $E$ un ensemble infini $(\nexists n \in \N \mid E \cong N_{\leq n})$. Il suffit de trouver une fonction injective
+	$\phi : \N \to E$. Soit $f: \Pa(E)\setminus\{\emptyset\} \to E$ du choix.\\
+	On définit:
+	$$ \Phi : \N \to \Pa(E) $$
+	Donc $ \Phi (0) = E$.\\
+	%TODO
+\end{proof}
+
+
+
+
+\begin{prop}
+	Un ensemble est infini si et seulement si il est équipotent  une partie propre.
+\end{prop}
+
+\begin{proof}
+	%TODO
+\end{proof}
+
+
