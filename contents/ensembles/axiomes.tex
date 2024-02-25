@@ -6,7 +6,7 @@
 
 \begin{axiom} [Compréhension]
 	Pour toute propriété $P(x)$, exprimée dans le langage de la théorie des ensembles du premier ordre,
-	$$ \forall A \ \exists B \subset A \text{ des éĺéments de } A \text{ qui vérifient } P(x)$$
+	$$ \forall A \ \exists B \subset A \text{ des éléments de } A \text{ qui vérifient } P(x)$$
 	Qui est équivalent à:
 	$$ \forall A \  \exists B \  \forall x (x \in B \iff x \in A \land P(x))$$
 	Cet ensemble est unique par extensionnalité et il est noté $\{x \in A \mid P(x)\}$.
@@ -24,13 +24,13 @@
 
 
 \begin{axiom}[Ensemble des parties]
-	$$ \forall A \exists V \forall C ( c \in B \iff \forall x ( x \in C \implies x    in A ) $$
+	$$ \forall A \exists B \forall C ( C \in B \iff \forall C \subseteq A)$$
 	On note $B = \mathcal{P}(A)$.
 \end{axiom}
 
 
 \begin{axiom}[Infini]
-	$$ \exists A (\emptyset \in A \land \forall x (x in A \implies x \cup \{x\} \in A))$$
+	$$ \exists A (\emptyset \in A \land \forall x (x \in A \implies x \cup \{x\} \in A))$$
 	On peut noter cette opération $x^+$.
 \end{axiom}
 
@@ -56,7 +56,7 @@ $$ \N \cup \left\{ \N, \N^+, \N^{++}, \ldots \right\} $$
 
 \begin{proof}
 	Si $A = C \land B = D$, alors $(A,B) = (C,D)$.\\
-	Opn suppose (A,B) = (C,D), i.e. $\{\{A\}, \{A,B\}\} = \{\{C\}, \{C,D\}\}$.\\
+	On suppose (A,B) = (C,D), i.e. $\{\{A\}, \{A,B\}\} = \{\{C\}, \{C,D\}\}$.\\
 
 	\begin{itemize}
 		\item Si $A \neq B$ on a $\{A\} \neq \{A,B\}$, donc $\{\{A\}, \{A,B\}\}$ n'est pas in singleton.
@@ -64,7 +64,7 @@ $$ \N \cup \left\{ \N, \N^+, \N^{++}, \ldots \right\} $$
 		      Il y a deux (ou moins) éléments dans $\{\{C\}, \{C,D\}\}$, donc $\{C\}$ et  $\{C,D\}$ sont différents.\\
 		      Et donc $C \neq D$. \\
 		      Il y a un seul singleton dans $\{\{A\}, \{A,B\}\}$, donc $\{A\} = \{C\}$, donc $A = C$.\\
-		      On a aussi $$\{A,B\} = \{C,D\}$$, donc $\{A, B\}\setminus \{A\} = \{C,D\}\setminus \{C\}$, donc $B = D$.
+		      On a aussi $$\{A,B\} = \{C,D\}$$, donc $\{A, B\}\setminus \{A\} = \{C,D\}\setminus \{C\}$ donc $B = D$.
 		\item Le reste est laissé en exercice pour le lecteur.
 	\end{itemize}
 \end{proof}
