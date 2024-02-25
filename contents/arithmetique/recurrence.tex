@@ -10,7 +10,7 @@ L'objectif est de définir $+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$:
 	\item $x + S(y) = S(x + y)$
 \end{itemize}
 
-Mas pour cela nous avons besoin du théoreme suivant:
+Mas pour cela nous avons besoin du théorème suivant:
 
 \begin{theorem} [Dedekind 1888]
 	Si $E$ un ensemble non vide, $a \in E$ et $h : E \to E$ une fonction. Alors il existe une unique fonction $f : \mathbb{N} \to E$ telle que:
@@ -21,14 +21,14 @@ Mas pour cela nous avons besoin du théoreme suivant:
 \end{theorem}
 
 \begin{proof}
-	L'unicité se demontre par récurrence. Soit $g$ une fonction vérifiant les mêmes propriétés que $f$.
+	L'unicité se démontre par récurrence. Soit $g$ une fonction vérifiant les mêmes propriétés que $f$.
 	\begin{itemize}
 		\item $g(0) = a = f(0)$
 		\item Si on a $g(x) = f(x)$ alors $f(S(x)) = h(f(x)) = h(g(x)) = g(S(x))$
 	\end{itemize}
-	Demontrons maintenant l'existence. Nous avons besoin d'une relation entre les éléments de $E$ et les éléments de $\mathbb{N}$, pour pouvoir
+	Démontrons maintenant l'existence. Nous avons besoin d'une relation entre les éléments de $E$ et les éléments de $\mathbb{N}$, pour pouvoir
 	définir une propriété de clôture. Pour cela on travaillera sur les sous ensembles de $\mathbb{N} \times E$.
-	Cette propriété de clôture est inspirée par la définiton de $f$, pour les sous-ensembles $R$ de $\mathbb{N} \times E$.
+	Cette propriété de clôture est inspirée par la définition de $f$, pour les sous-ensembles $R$ de $\mathbb{N} \times E$.
 
 	$$ Cl(A) = (0,a) \in R \ \text{et} \ \forall n \in \mathbb{N}, \forall y \in E, (n,y) \in R \implies (S(n), h(y)) \in R $$
 
@@ -93,7 +93,7 @@ Mas pour cela nous avons besoin du théoreme suivant:
 	\begin{itemize}
 		\item Unicité: Soit $f,f'$ deux fonctions vérifiant les propriétés du corollaire. On définit $\tilde{f}$ et $\tilde{f'}$ en utilisant \ref{eq:recurrence}.
 		      Donc $f = f' \iff \tilde{f} = \tilde{f'}$.
-		      Maintenat on étudie juste l'unicité de $\tilde{f}$.
+		      Maintenant on étudie juste l'unicité de $\tilde{f}$.
 		      \begin{itemize}
 			      \item  $ \tilde{f}(0) = g = \tilde{f'}(0)$
 			      \item $ \tilde{f}(S(x)) = \tilde{h}(\tilde{f}(x))$ et $ \tilde{f'}(S(x)) = \tilde{h}(\tilde{f'}(x))$.
@@ -103,7 +103,7 @@ Mas pour cela nous avons besoin du théoreme suivant:
 			      \tilde{h}: E^A & \to & E^A \\
 			      k & \mapsto & h(k(y),y)
 		      \end{eqnarray*}
-		      Soit $\tilde{f} : \N \to E^A$ définie par le théoreme de rñecurrence:
+		      Soit $\tilde{f} : \N \to E^A$ définie par le théorème de récurrence:
 		      \begin{itemize}
 			      \item $\tilde{f}(0) = g$
 			      \item $\tilde{f}(S(x)) = \tilde{h}(\tilde{f}(x))$
